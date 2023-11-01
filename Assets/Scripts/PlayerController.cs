@@ -47,5 +47,11 @@ public class PlayerController : MonoBehaviour
             Vector3 awayFromPlayer = collision.gameObject.transform.position - transform.position;
             enemyRb.AddForce(awayFromPlayer * 10, ForceMode.Impulse);
         }
+        if(collision.gameObject.name == "Enemy 1(Clone)")
+        {
+            Rigidbody enemyRb = collision.gameObject.GetComponent<Rigidbody>();
+            Vector3 awayFromPlayer = transform.position - collision.gameObject.transform.position;
+            playerRb.AddForce(awayFromPlayer * 5, ForceMode.Impulse);
+        }
     }
 }
